@@ -1,0 +1,26 @@
+{
+	"name": "SqlPoolTable1",
+	"properties": {
+		"parameters": {
+			"tablename": {
+				"type": "String",
+				"defaultValue": "Products"
+			}
+		},
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		},
+		"sqlPool": {
+			"referenceName": "roywarehouse",
+			"type": "SqlPoolReference"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

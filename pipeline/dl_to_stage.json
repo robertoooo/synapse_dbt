@@ -1,0 +1,118 @@
+{
+	"name": "dl_to_stage",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy From DL to DW",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlPoolSink",
+						"preCopyScript": {
+							"value": "IF OBJECT_ID('dbo.Products') IS NOT NULL DROP TABLE dbo.Products\n",
+							"type": "Expression"
+						},
+						"allowCopyCommand": true,
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_csv_dataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "Products.csv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlPoolTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": "Products"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy From DL to DW_copy1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlPoolSink",
+						"preCopyScript": {
+							"value": "IF OBJECT_ID('dbo.Products') IS NOT NULL DROP TABLE dbo.Products\n",
+							"type": "Expression"
+						},
+						"allowCopyCommand": true,
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "dl_csv_dataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "SalesOrderItems.csv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlPoolTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": "SalesOrderItems"
+						}
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-12-17T16:10:43Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

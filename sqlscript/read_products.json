@@ -1,0 +1,17 @@
+{
+	"name": "read_products",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [PRODUCTID]\n,[TYPECODE]\n,[PRODCATEGORYID]\n,[CREATEDBY]\n,[CREATEDAT]\n,[CHANGEDBY]\n,[CHANGEDAT]\n,[SUPPLIER_PARTNERID]\n,[TAXTARIFFCODE]\n,[QUANTITYUNIT]\n,[WEIGHTMEASURE]\n,[WEIGHTUNIT]\n,[CURRENCY]\n,[PRICE]\n,[WIDTH]\n,[DEPTH]\n,[HEIGHT]\n,[DIMENSIONUNIT]\n,[PRODUCTPICURL]\n FROM [dbo].[Products]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "roywarehouse",
+				"poolName": "roywarehouse"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
