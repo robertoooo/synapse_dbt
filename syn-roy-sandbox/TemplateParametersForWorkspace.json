@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "syn-roy-sandbox"
+		},
+		"AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"syn-roy-sandbox-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://dlroy.dfs.core.windows.net"
+		},
+		"syn-roy-sandbox-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://dlroy.dfs.core.windows.net"
+		}
+	}
+}
