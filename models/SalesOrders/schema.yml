@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: SalesOrderItems_Total
+    description: "Group on product ID to get the total amounts and quantites."
+    columns:
+      - name: PRODUCTID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+
+sources:
+  - name: dbo
+    tables:
+      - name: Products
+      - name: SalesOrderItems

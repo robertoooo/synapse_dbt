@@ -1,7 +1,0 @@
-version: 2
-
-sources:
-  - name: dbo
-    tables:
-      - name: Products
-      - name: SalesOrderItems
