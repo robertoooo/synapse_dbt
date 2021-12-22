@@ -11,6 +11,7 @@
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",
 			"type": "IntegrationRuntimeReference"
-		}
+		},
+		"description": "The data lake linked service"
 	}
 }
