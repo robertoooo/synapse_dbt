@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy From DL to DW",
+				"name": "Copy Products from DL to DW",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -57,7 +57,7 @@
 				]
 			},
 			{
-				"name": "Copy From DL to DW_copy1",
+				"name": "Copy SalesOrderItems from DL to DW",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
