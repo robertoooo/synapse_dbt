@@ -35,7 +35,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy From DL to DW",
+						"name": "Copy Products from DL to DW",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -90,7 +90,7 @@
 						]
 					},
 					{
-						"name": "Copy From DL to DW_copy1",
+						"name": "Copy SalesOrderItems from DL to DW",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -446,14 +446,11 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "e2d9b588-01dc-4fe0-8410-8437f0a3936a"
+						"spark.autotune.trackingId": "0417f101-859c-4f49-9bfd-0c21327f2f47"
 					}
 				},
 				"metadata": {
 					"saveOutput": true,
-					"synapse_widget": {
-						"version": "0.1"
-					},
 					"enableDebugMode": false,
 					"kernelspec": {
 						"name": "synapse_pyspark",
@@ -475,16 +472,17 @@
 						"nodeCount": 3,
 						"cores": 4,
 						"memory": 28,
-						"extraHeader": null
-					}
+						"automaticScaleJobs": false
+					},
+					"sessionKeepAliveTimeout": 30
 				},
 				"cells": [
 					{
 						"cell_type": "code",
+						"metadata": {},
 						"source": [
 							"df = spark.sql(\"SELECT * FROM dbo.my_first_dbt_model\") "
 						],
-						"attachments": null,
 						"outputs": [],
 						"execution_count": 2
 					},
@@ -504,7 +502,6 @@
 						"source": [
 							""
 						],
-						"attachments": null,
 						"outputs": [],
 						"execution_count": null
 					}
@@ -533,18 +530,15 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "a29f8036-4f9c-449b-a322-b3baa41d4f4f"
+						"spark.autotune.trackingId": "8cf9fd32-ace4-4e36-8dbe-bcf429c95a2d"
 					}
 				},
 				"metadata": {
 					"saveOutput": true,
-					"synapse_widget": {
-						"version": "0.1"
-					},
 					"enableDebugMode": false,
 					"kernelspec": {
-						"name": "synapse_pyspark",
-						"display_name": "Synapse PySpark"
+						"name": "synapse_spark",
+						"display_name": "scala"
 					},
 					"language_info": {
 						"name": "scala"
@@ -562,18 +556,19 @@
 						"nodeCount": 3,
 						"cores": 4,
 						"memory": 28,
-						"extraHeader": null
-					}
+						"automaticScaleJobs": false
+					},
+					"sessionKeepAliveTimeout": 30
 				},
 				"cells": [
 					{
 						"cell_type": "code",
+						"metadata": {},
 						"source": [
 							"%%spark\n",
 							"val df = spark.read.sqlanalytics(\"roywarehouse.dbo.my_first_dbt_model\") \n",
 							"df.write.mode(\"overwrite\").saveAsTable(\"default.t1\")"
 						],
-						"attachments": null,
 						"outputs": [],
 						"execution_count": 1
 					}
