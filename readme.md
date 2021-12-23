@@ -1,5 +1,5 @@
 # This repository demonstrates using dbt togehter with synapse dedicated SQL pool
-In this project we will use dbt togheter with synapse to load the SAP Bikes Sales sample data to create tables and views Synapse dedicated SQL server.
+In this project we will use dbt togheter with synapse to load the SAP Bikes Sales sample data to create tables and views in Synapse dedicated SQL server.
 * Setup Azure Synapse
 * Load the data from the data lake using Synapse Pipelines
 * Run dbt to create views of the Sales data, more specifically group the sales orders table, join it with products table and calculate the total weight sold.
