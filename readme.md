@@ -4,6 +4,8 @@ In this project we will use dbt togheter with synapse to load the SAP Bikes Sale
 * Load the data from the data lake using Synapse Pipelines
 * Run dbt to create views of the Sales data, more specifically group the sales orders table, join it with products table and calculate the total weight sold.
 
+![image](https://user-images.githubusercontent.com/16771332/147192701-ccfcbfe2-d3c4-4c04-813d-769ab41b5a55.png)
+
 
 ## Branches
 In this project I am currently using github to version control both the dbt project and the synapse workspace.
@@ -14,7 +16,7 @@ In this project I am currently using github to version control both the dbt proj
 
 # Azure Synapse
 ## Getting Started
-1. Download the synapse_workspace branch (including the ARM templates) and import it to your own Synapse workspace.
+1. Fork the repository so that you can connect your own Synaps instance to your own git repostitory. https://docs.microsoft.com/en-us/azure/synapse-analytics/cicd/source-control
 2. Setup is the data lake linked service to your own data lake inside azure.
 Go to Manage -> Linked Services --> AzureDataLakeStorage
 ![image](https://user-images.githubusercontent.com/16771332/147113976-1d6e603e-41c2-4256-af0c-8759e5074d76.png)
