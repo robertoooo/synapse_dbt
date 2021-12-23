@@ -10,6 +10,16 @@ models:
           - unique
           - not_null
 
+  - name: SalesOrderItems_TotalWeight
+    description: "Join SalesOrderItems_Total with Products to get the total weight of the sold orders."
+    columns:
+      - name: PRODUCTID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+
 
 sources:
   - name: dbo
