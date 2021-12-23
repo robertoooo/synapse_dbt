@@ -39,7 +39,7 @@ Run the pipeline, this should create two tables inside your Synapse dedicated SQ
 
 # dbt
 ## clone the dbt repository
-Clone the dbt repository called main_dbt and change branch to dbt_vault
+Clone the repository and change branch to dbt_vault (you can also clone your forked version of the repository).
 ```sh
 git clone https://github.com/robertoooo/synapse_dbt.git
 git checkout dbt_vault
